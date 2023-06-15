@@ -1,8 +1,9 @@
 import styles from './paginaPadrao.module.scss';
 import { Outlet } from 'react-router-dom';
 import stylesTema from 'styles/Tema.module.scss';
+import React from 'react';
 
-export default function PaginaPadrao() {
+export default function PaginaPadrao({children}: {children?: React.ReactNode}) {
   return (
     <>
       <header className={styles.header}>
@@ -11,7 +12,8 @@ export default function PaginaPadrao() {
         </div>
       </header>
       <div className={stylesTema.container}>
-        <Outlet/>
+        <Outlet />
+        {children}
       </div>
     </>
   );
